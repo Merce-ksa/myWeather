@@ -1,0 +1,75 @@
+.head-wrap {
+    margin: auto;
+}
+
+.city-title {
+    margin-bottom: 2px;
+    margin-left: -5px;
+    font-size: 50px;
+}
+
+.coordinates {
+    display: flex;
+}
+
+.coordinates p {
+    margin: 0 10px 0 0;  
+    padding: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #f15d45;
+}
+
+.weather-resum {
+    display: flex;
+    align-items: center;
+}
+
+.weather-resum p {
+    font-size: 50px;
+}
+
+.tempertaures-list-wrap {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tempertaures-list-wrap li{
+    padding-right: 10px;
+}
+
+.hours-of-light-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.hours-of-light-wrap li{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.icofont-sun-set:before, .icofont-sun-rise:before {
+    margin-right: 5px;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.wind-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.direction {
+    width: 10px;
+    margin: 0;
+    padding: 0 10px;
+    transform-origin: center;
+}
