@@ -48,7 +48,7 @@
           justify-content: center;
 }
 
-.form-button button {
+.form-button .search {
   width: 300px;
   height: 40px;
   line-height: 40px;

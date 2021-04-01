@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import './assets/styles/index.css';
-import Landing from './components/Landing/Landing';
+import Home from './components/Home/Home';
+import Weather from './components/Weather/Weather';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Route path="/" exact component={Landing} />
+    <Route path="/" exact component={Home} />
+    <Route path="/weather/:cityName" component={Weather} />
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -11,18 +11,21 @@ export default function Header() {
             className="input-header"
             placeholder="Busca por ciudad"
           />
-          <button type="button" className="fas fa-search" onClick="searchByCityName('input-header')"> search </button>
+          {/* <button
+          type="button"
+          className="fas fa-search"
+          onClick="searchByCityName('input-header')"> search </button> */}
         </div>
         <ul key="units" className="measurement-units">
           <li className="metric-list units-active">
-            <button type="button" className="metrix">
+            {/* <button type="button" className="metrix">
               Metric: ºC, m/s
-            </button>
+            </button> */}
           </li>
           <li className="imperial-list">
-            <button type="button" className="imperial">
+            {/* <button type="button" className="imperial">
               Imperial: ºF, mph
-            </button>
+            </button> */}
           </li>
         </ul>
       </div>
