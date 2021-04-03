@@ -17,11 +17,14 @@ export default function Home() {
             name="cityName"
             onChange={(event) => setCityName(event.target.value)}
             placeholder="Nombre de la población"
+            required
           />
           <div className="form-button">
             <Link
-              to={`/weather/${cityName}`}
-              params={{ cityName: `${cityName}` }}
+              to={{
+                pathname: '/weather',
+                state: { cityName: `${cityName}`, units: 'metric' }
+              }}
               className="search"
             >
               Buscar

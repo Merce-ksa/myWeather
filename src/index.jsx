@@ -9,7 +9,7 @@ import Weather from './components/Weather/Weather';
 ReactDOM.render(
   <BrowserRouter>
     <Route path="/" exact component={Home} />
-    <Route path="/weather/:cityName" component={Weather} />
+    <Route path="/weather/" component={Weather} />
   </BrowserRouter>,
   document.getElementById('root')
 );
