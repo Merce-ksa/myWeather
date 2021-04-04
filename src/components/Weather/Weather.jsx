@@ -5,7 +5,7 @@ import './Weather.css';
 import Header from '../Header/Header';
 import weatherFetcher from '../../services/weatherFetcher';
 import dateFormater from '../../utils/dateFormater';
-// { match: { params: { cityName } } }
+import formatUnits from '../../utils/formatUnitsOfMeasure';
 
 export default function Weather() {
   const [weather, setWeatherData] = useState();
@@ -14,10 +14,10 @@ export default function Weather() {
   const { cityName, units } = dataLocation.state;
 
   useEffect(() => {
-    weatherFetcher(cityName, units).then((result) => {
-      setWeatherData(result);
+    weatherFetcher(cityName, units).then((weatherData) => {
+      setWeatherData(weatherData);
     });
-  }, []);
+  }, [cityName, units]);
 
   if (weather !== undefined) {
     return (
@@ -38,17 +38,17 @@ export default function Weather() {
           <div className="body-wrap">
             <div className="weather-resum">
               <img src={`http://openweathermap.org/img/wn/${weather.icon}@4x.png`} alt="resum-weather" />
-              <p>{`${weather.summary.temp.toFixed(1)} ºC`}</p>
+              <p>{`${weather.summary.temp.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
             </div>
             <ul key="temperature" className="temperature-list">
               <li>
-                <p>{`Feel ${weather.summary.feels_like.toFixed(1)} ºC`}</p>
+                <p>{`Feel ${weather.summary.feels_like.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
               </li>
               <li>
-                <p>{`Min ${weather.summary.temp_min.toFixed(1)} ºC`}</p>
+                <p>{`Min ${weather.summary.temp_min.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
               </li>
               <li>
-                <p>{`Max ${weather.summary.temp_max.toFixed(1)} ºC`}</p>
+                <p>{`Max ${weather.summary.temp_max.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
               </li>
               <li>
                 <p>{`${weather.summary.pressure} hPa`}</p>
@@ -59,15 +59,25 @@ export default function Weather() {
             </ul>
             <ul key="hours-of-light" className="hours-of-light">
               <li>
-                <p>{dateFormater(weather.sunrise)}</p>
+                <p>
+                  <span className="icofont-sun-rise" />
+                  {dateFormater(weather.sunrise)}
+                </p>
               </li>
               <li>
-                <p>{dateFormater(weather.sunset)}</p>
+                <p>
+                  <span className="icofont-sun-set" />
+                  {dateFormater(weather.sunset)}
+
+                </p>
               </li>
             </ul>
             <ul key="wind" className="wind">
               <li>
-                <p>{`${weather.wind.speed} m/s`}</p>
+                <p>{`${weather.wind.speed} ${formatUnits(units, 'speed')}`}</p>
+              </li>
+              <li>
+                <p className="direction" />
               </li>
             </ul>
           </div>

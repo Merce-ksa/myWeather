@@ -20,6 +20,24 @@ header {
   padding: 20px 0;
 }
 
+@media screen and (max-width: 600px) {
+  .header-wrap {
+    max-width: 400px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: auto;
+    padding: 20px 0;
+  }
+}
+
 .search-wrap {
   width: 400px;
   height: 40px;
@@ -33,7 +51,7 @@ header {
   background-color: #ffffff;
 }
 
-.input-header {
+.search-wrap input {
   width: 350px;
   height: 90%;
   padding-left: 10px;
@@ -42,31 +60,42 @@ header {
   font-family: "Quicksand", sans-serif;
 }
 
-.input-header::-webkit-input-placeholder, .input-header:focus {
+.search-wrap input::-webkit-input-placeholder, .search-wrap input:focus {
   font-size: 16px;
 }
 
-.input-header:-ms-input-placeholder, .input-header:focus {
+.search-wrap input:-ms-input-placeholder, .search-wrap input:focus {
   font-size: 16px;
 }
 
-.input-header::-ms-input-placeholder, .input-header:focus {
+.search-wrap input::-ms-input-placeholder, .search-wrap input:focus {
   font-size: 16px;
 }
 
-.input-header::placeholder, .input-header:focus {
+.search-wrap input::placeholder, .search-wrap input:focus {
   font-size: 16px;
 }
 
-.search-wrap button {
+.search-wrap a {
+  height: calc(90% + 2px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: inherit;
   border: 0;
-  width: 20px;
 }
 
-.search-wrap span {
+.search-wrap a span {
+  width: 50px;
+  height: 100%;
   background-color: transparent;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
   border-radius: 0 5px 5px 0;
   background-color: #48484a;
@@ -79,6 +108,12 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -86,32 +121,66 @@ header {
   border: 1px solid #78CBBF;
 }
 
-.measurement-units li {
+.measurement-units .units-list {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 10px 5px;
+  font-size: 14px;
+  border: 0;
+  background-color: transparent;
   text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
-.measurement-units li:hover {
+.measurement-units .units-list:hover {
   background-color: #78CBBF;
 }
 
-.metric, .imperial {
-  padding: 0;
+.measurement-units .units-list--active {
+  background-color: #78CBBF;
+}
+
+@media screen and (max-width: 600px) {
+  .measurement-units {
+    margin-top: 15px;
+  }
+}
+
+.units-btn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
   margin: 0;
+  padding: 10px 15px;
   font-size: 14px;
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+  color: #000000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.units-active {
-  background-color: #78CBBF;
+@media screen and (max-width: 600px) {
+  .units-btn {
+    height: 28px;
+  }
+}
+
+.units-btn:hover {
   color: #ffffff;
   font-weight: 600;
 }
 
-.fa-search {
-  content: "\e815";
+.units-btn--active {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  outline: none;
 }
 /*# sourceMappingURL=Header.css.map */
