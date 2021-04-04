@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
 import '../../assets/fonts/icofont.css';
 
 export default function Header() {
+  const dataLocation = useLocation();
+
+  const [cityName, setCityName] = useState('');
+  const [metric, setMetric] = useState(true);
+  const [imperial, setImperial] = useState(false);
+
+  function toggleMetric() {
+    setMetric(true);
+    setImperial(false);
+  }
+
+  function toggleImperial() {
+    setMetric(false);
+    setImperial(true);
+  }
+
   return (
     <header>
       <div className="header-wrap">
@@ -11,25 +28,51 @@ export default function Header() {
             type="text"
             className="input-header"
             placeholder="Busca por ciudad"
+            value={cityName}
+            name="cityName"
+            onChange={(event) => setCityName(event.target.value)}
           />
-          <button
-            type="button"
-            onClick="searchByCityName('input-header')"
+          <Link to={{
+            pathname: '/weather',
+            state: {
+              cityName: `${cityName}`,
+              units: metric ? 'metric' : 'imperial'
+            }
+          }}
           >
             <span className="icofont-search-1" />
-
-          </button>
+          </Link>
         </div>
         <ul key="units" className="measurement-units">
-          <li className="metric-list units-active">
-            <button type="button" className="metrix">
+          <li className={metric ? 'units-list--active units-list' : 'units-list'}>
+            <Link
+              className={metric ? 'units-btn--active units-btn' : 'units-btn '}
+              onClick={toggleMetric}
+              to={{
+                pathname: '/weather',
+                state: {
+                  cityName: !cityName ? `${dataLocation.state.cityName}` : `${cityName}`,
+                  units: 'metric'
+                }
+              }}
+            >
               Metric: ºC, m/s
-            </button>
+            </Link>
           </li>
-          <li className="imperial-list">
-            <button type="button" className="imperial">
+          <li className={imperial ? 'units-list--active units-list' : 'units-list'}>
+            <Link
+              className={imperial ? 'units-btn--active units-btn' : 'units-btn '}
+              onClick={toggleImperial}
+              to={{
+                pathname: '/weather',
+                state: {
+                  cityName: !cityName ? `${dataLocation.state.cityName}` : `${cityName}`,
+                  units: 'imperial'
+                }
+              }}
+            >
               Imperial: ºF, mph
-            </button>
+            </Link>
           </li>
         </ul>
       </div>
