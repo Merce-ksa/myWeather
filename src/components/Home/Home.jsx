@@ -16,7 +16,7 @@ export default function Home() {
             value={cityName}
             name="cityName"
             onChange={(event) => setCityName(event.target.value)}
-            placeholder="Nombre de la población"
+            placeholder="Search by location"
             required
           />
           <div className="form-button">

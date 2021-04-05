@@ -27,7 +27,7 @@ export default function Header() {
           <input
             type="text"
             className="input-header"
-            placeholder="Busca por ciudad"
+            placeholder="Search by location"
             value={cityName}
             name="cityName"
             onChange={(event) => setCityName(event.target.value)}
