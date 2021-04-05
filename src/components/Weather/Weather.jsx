@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './Weather.css';
 import Header from '../Header/Header';
 import weatherFetcher from '../../services/weatherFetcher';
@@ -42,42 +41,47 @@ export default function Weather() {
             </div>
             <ul key="temperature" className="temperature-list">
               <li>
-                <p>{`Feel ${weather.summary.feels_like.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+                <span>Feel</span>
+                <p>
+                  {`${weather.summary.feels_like.toFixed(1)} ${formatUnits(units, 'temperature')}`}
+                </p>
               </li>
               <li>
-                <p>{`Min ${weather.summary.temp_min.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+                <span>Min</span>
+                <p>{`${weather.summary.temp_min.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
               </li>
               <li>
-                <p>{`Max ${weather.summary.temp_max.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+                <span>Max</span>
+                <p>{`${weather.summary.temp_max.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
               </li>
               <li>
+                <span>Pressure</span>
                 <p>{`${weather.summary.pressure} hPa`}</p>
               </li>
               <li>
+                <span>Humidity</span>
                 <p>{`${weather.summary.humidity} %`}</p>
               </li>
             </ul>
             <ul key="hours-of-light" className="hours-of-light">
               <li>
-                <p>
-                  <span className="icofont-sun-rise" />
-                  {dateFormater(weather.sunrise)}
-                </p>
+                <span className="icofont-sun-rise" />
+                <p>{dateFormater(weather.sunrise)}</p>
               </li>
               <li>
-                <p>
-                  <span className="icofont-sun-set" />
-                  {dateFormater(weather.sunset)}
-
-                </p>
+                <span className="icofont-sun-set" />
+                <p>{dateFormater(weather.sunset)}</p>
               </li>
             </ul>
             <ul key="wind" className="wind">
               <li>
                 <p>{`${weather.wind.speed} ${formatUnits(units, 'speed')}`}</p>
-              </li>
-              <li>
-                <p className="direction" />
+                <div
+                  className="wind-direction"
+                  style={{ transform: `rotate(${weather.wind.deg}deg)` }}
+                >
+                  <span>➤</span>
+                </div>
               </li>
             </ul>
           </div>
@@ -90,9 +94,3 @@ export default function Weather() {
     null
   );
 }
-
-Weather.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({ cityName: PropTypes.string }).isRequired
-  }).isRequired
-};

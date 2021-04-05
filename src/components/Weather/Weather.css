@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.header-weather-detail {
-  background-color: #f2f2f2;
-}
-
 .title-brand, .head-wrap, .body-wrap {
   width: 800px;
   margin: auto;
 }
 
-.head-wrap {
-  margin: auto;
+@media only screen and (max-width: 768px) {
+  .title-brand, .head-wrap, .body-wrap {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .title-brand, .head-wrap, .body-wrap {
+    max-width: 90%;
+  }
 }
 
 .city-title {
@@ -46,10 +50,31 @@
   font-size: 50px;
 }
 
+@media only screen and (max-width: 375px) {
+  .weather-resum img {
+    width: 50%;
+  }
+  .weather-resum p {
+    margin-left: 0;
+    font-size: 40px;
+  }
+}
+
 .temperature-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -57,53 +82,160 @@
 
 .temperature-list li {
   padding-right: 10px;
+  font-size: 20px;
+}
+
+.temperature-list li p {
+  margin-top: 5px;
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 425px) {
+  .temperature-list {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .temperature-list li {
+    font-size: 16px;
+  }
+  .temperature-list li p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .temperature-list li {
+    font-size: 14px;
+  }
+  .temperature-list li p {
+    font-size: 16px;
+  }
 }
 
 .hours-of-light {
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: 22px;
 }
 
 .hours-of-light li {
+  width: 100%;
+  max-width: 38%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 15px;
+  font-size: 20px;
 }
 
-.icofont-sun-set:before, .icofont-sun-rise:before {
-  margin-right: 5px;
-  font-weight: 300;
-  font-size: 35px;
+.hours-of-light li span::before {
+  padding-right: 5px;
+  font-size: 50px;
+}
+
+.hours-of-light li p {
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 425px) {
+  .hours-of-light {
+    width: 100%;
+    font-size: 16px;
+  }
+  .hours-of-light li p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .hours-of-light li {
+    font-size: 14px;
+  }
+  .hours-of-light li p {
+    font-size: 16px;
+  }
 }
 
 .wind {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.direction {
-  width: 10px;
-  margin: 0;
-  padding: 0 10px;
+.wind li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wind .wind-direction {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+  text-align: center;
   -webkit-transform-origin: center;
           transform-origin: center;
+}
+
+.wind .wind-direction span {
+  font-size: 24px;
+}
+
+.wind p {
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 425px) {
+  .wind li {
+    font-size: 16px;
+  }
+  .wind li .wind-direction span {
+    font-size: 24px;
+  }
+  .wind li p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .wind li {
+    font-size: 14px;
+  }
+  .wind li p {
+    font-size: 16px;
+  }
 }
 /*# sourceMappingURL=Weather.css.map */

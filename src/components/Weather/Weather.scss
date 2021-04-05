@@ -1,16 +1,19 @@
 @import '../../assets/styles/globals/globals';
+@import '../../assets/styles//globals/mediaqueries';
 
-.header-weather-detail {
-    background-color: #f2f2f2;
-}
+
 
 .title-brand, .head-wrap, .body-wrap {
     width: 800px;
     margin: auto;
-}
+    
+    @include media(tablet){
+        max-width: 720px;
+    }
 
-.head-wrap {
-    margin: auto;
+    @include media(mobile-l){
+        max-width: 90%;
+    }
 }
 
 .city-title {
@@ -39,51 +42,168 @@
     p {
         font-size: 50px;
     }
+
+    @include media(mobile-m){
+        img {
+            width: 50%;
+        }
+        p {
+            margin-left: 0;
+            font-size: 40px;
+        }
+    }
 }
 
 .temperature-list {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    li{
+    li {
         padding-right: 10px;
+        font-size: 20px;
+
+        p {
+            margin-top: 5px;
+            font-size: 22px;
+        }
+    }
+
+    @include media(mobile-l){
+        align-items: center;
+        text-align: center;
+
+        li {
+            font-size: 16px;
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include media(mobile-m){
+        li {
+            font-size: 14px;
+
+            p {
+                font-size: 16px;
+            }
+        }
     }
 }
-
 
 .hours-of-light {
+    width: 70%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 22px;
 
-    li{
+    li {
+        width: 100%;
+        max-width: 38%;
+        box-sizing: border-box;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        margin-right: 15px;
-    }
-}
+        font-size: 20px;
 
-.icofont-sun-set:before, .icofont-sun-rise:before {
-    margin-right: 5px;
-    font-weight: 300;
-    font-size: 35px;
+        span::before {
+            padding-right: 5px;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+    }
+
+    @include media(mobile-l){
+        width: 100%;
+        font-size: 16px;
+
+        li {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include media(mobile-m){
+        li {
+            font-size: 14px;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
 .wind {
-    display: flex;
-    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    .wind-direction {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        text-align: center;
+        transform-origin: center;
+
+        span {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    @include media(mobile-l){
+        li {
+            font-size: 16px;
+
+            .wind-direction {
+                span {
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include media(mobile-m){
+        li {
+            font-size: 14px;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
-.direction {
-    width: 10px;
-    margin: 0;
-    padding: 0 10px;
-    transform-origin: center;
-}
