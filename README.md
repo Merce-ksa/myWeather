@@ -1,6 +1,6 @@
 # myWeather
 
-MyWeather is a weather forecast project! Quickly access the local forecast.
+MyWeather is a weather forecast project! Access quickly to the local forecast.
 You can see the project at [myWeather.com](https://)
 
 ![alt text](https://i.imgur.com/MIMx1jM.png?1)
@@ -8,9 +8,9 @@ You can see the project at [myWeather.com](https://)
 
 ## Dependencies
 
-This project was bootstrapped with React.
+This project is bootstrapped with React.
 It is full responsive and SASS has been used to give styles.
-For testing, Jest has been used.
+For testing, I've decided to use [Jest framework](https://jestjs.io/). 
 
 ## Folder structure
 
@@ -67,4 +67,4 @@ myWeather
 ```
 
 ## API OpenWeather
-To obtain the meteorological information, the [OpenWeather](https://openweathermap.org/forecast5) API has been used.
+To obtain the meteorological information, I have used the [OpenWeather](https://openweathermap.org/forecast5) API.
