@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url(/Users/mercecasamitjana/Documents/Merce/myWeather/src/assets/fonts/icofont.css);
+@import url("../../assets/fonts/icofont.css");
 header {
   width: 100%;
   background-color: #f2f2f2;
