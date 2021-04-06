@@ -1,4 +1,4 @@
-function formatUnits(metricSystem, magnitude) {
+function unitsFormater(metricSystem, magnitude) {
   if (metricSystem === 'metric') {
     switch (magnitude) {
       case 'speed':
@@ -16,4 +16,4 @@ function formatUnits(metricSystem, magnitude) {
   }
 }
 
-export default formatUnits;
+export default unitsFormater;

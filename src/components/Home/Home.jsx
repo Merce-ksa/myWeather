@@ -8,10 +8,11 @@ export default function Home() {
   return (
     <main key="searcher-content" className="searcher-content">
       <div className="searcher">
-        <h1 className="searcher__title">El tiempo</h1>
+        <h1 className="searcher__title">myWeather</h1>
         <div className="searcher__form">
           <input
             type="text"
+            id="searcher"
             className="location"
             value={cityName}
             name="cityName"
@@ -27,7 +28,7 @@ export default function Home() {
               }}
               className="search"
             >
-              Buscar
+              Search
 
             </Link>
           </div>

@@ -26,6 +26,7 @@ export default function Header() {
         <div className="search-wrap">
           <input
             type="text"
+            id="searcher-header"
             className="input-header"
             placeholder="Search by location"
             value={cityName}
