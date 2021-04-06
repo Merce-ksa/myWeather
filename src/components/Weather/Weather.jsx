@@ -37,7 +37,7 @@ export default function Weather() {
           <div className="body-wrap">
             <div className="weather-resum">
               <img src={`http://openweathermap.org/img/wn/${weather.icon}@4x.png`} alt="resum-weather" />
-              <p>{`${weather.summary.temp.toFixed(1)} ${unitsFormater(units, 'temperature')}`}</p>
+              <p className="temp-resum">{`${weather.summary.temp.toFixed(1)} ${unitsFormater(units, 'temperature')}`}</p>
             </div>
             <ul key="temperature" className="temperature-list">
               <li>
