@@ -12,6 +12,7 @@ export default function Home() {
         <div className="searcher__form">
           <input
             type="text"
+            id="searcher"
             className="location"
             value={cityName}
             name="cityName"
@@ -27,7 +28,7 @@ export default function Home() {
               }}
               className="search"
             >
-              Buscar
+              Search
 
             </Link>
           </div>

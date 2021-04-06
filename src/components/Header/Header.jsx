@@ -26,6 +26,7 @@ export default function Header() {
         <div className="search-wrap">
           <input
             type="text"
+            id="searcher-header"
             className="input-header"
             placeholder="Search by location"
             value={cityName}
@@ -51,7 +52,7 @@ export default function Header() {
               to={{
                 pathname: '/weather',
                 state: {
-                  cityName: !cityName ? `${dataLocation.state.cityName}` : `${cityName}`,
+                  cityName: !cityName ? `${dataLocation}` : `${cityName}`,
                   units: 'metric'
                 }
               }}
