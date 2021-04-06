@@ -4,7 +4,7 @@ import './Weather.css';
 import Header from '../Header/Header';
 import weatherFetcher from '../../services/weatherFetcher';
 import dateFormater from '../../utils/dateFormater';
-import formatUnits from '../../utils/formatUnitsOfMeasure';
+import unitsFormater from '../../utils/unitsFormater';
 
 export default function Weather() {
   const [weather, setWeatherData] = useState();
@@ -37,22 +37,22 @@ export default function Weather() {
           <div className="body-wrap">
             <div className="weather-resum">
               <img src={`http://openweathermap.org/img/wn/${weather.icon}@4x.png`} alt="resum-weather" />
-              <p>{`${weather.summary.temp.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+              <p>{`${weather.summary.temp.toFixed(1)} ${unitsFormater(units, 'temperature')}`}</p>
             </div>
             <ul key="temperature" className="temperature-list">
               <li>
                 <span>Feel</span>
                 <p>
-                  {`${weather.summary.feels_like.toFixed(1)} ${formatUnits(units, 'temperature')}`}
+                  {`${weather.summary.feels_like.toFixed(1)} ${unitsFormater(units, 'temperature')}`}
                 </p>
               </li>
               <li>
                 <span>Min</span>
-                <p>{`${weather.summary.temp_min.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+                <p>{`${weather.summary.temp_min.toFixed(1)} ${unitsFormater(units, 'temperature')}`}</p>
               </li>
               <li>
                 <span>Max</span>
-                <p>{`${weather.summary.temp_max.toFixed(1)} ${formatUnits(units, 'temperature')}`}</p>
+                <p>{`${weather.summary.temp_max.toFixed(1)} ${unitsFormater(units, 'temperature')}`}</p>
               </li>
               <li>
                 <span>Pressure</span>
@@ -75,7 +75,7 @@ export default function Weather() {
             </ul>
             <ul key="wind" className="wind">
               <li>
-                <p>{`${weather.wind.speed} ${formatUnits(units, 'speed')}`}</p>
+                <p>{`${weather.wind.speed} ${unitsFormater(units, 'speed')}`}</p>
                 <div
                   className="wind-direction"
                   style={{ transform: `rotate(${weather.wind.deg}deg)` }}
