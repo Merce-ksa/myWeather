@@ -1,8 +1,9 @@
 import axios from 'axios';
 import WeatherLocation from './weatherLocation';
+import openweathermapConfig from './api.config';
 
 async function weatherFetcher(cityName, units) {
-  return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&&lang=sp&units=${units}&appid=3c74ac129f18ab59e709f229523cbc05`)
+  return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&&lang=sp&units=${units}&appid=${openweathermapConfig.appId}`)
     .then((res) => new WeatherLocation(
       res.data.name,
       res.data.coord,
