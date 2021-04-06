@@ -1,7 +1,6 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { render } from '@testing-library/react';
+import { unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Header from './Header';
 
@@ -32,11 +31,9 @@ describe('Given a Header function', () => {
     test('Then input value will changes', () => {
       act(() => {
         render(
-          <MemoryRouter
-            initialEntries={[{ pathname: '/weather', state: { cityName: 'London', units: 'metric' } }]}
-          >
-            <Header />
-          </MemoryRouter>, container
+
+          <Header />
+
         );
       });
 
@@ -44,21 +41,21 @@ describe('Given a Header function', () => {
     });
   });
 
-  xdescribe('When is invoked', () => {
-    test('Then input value will changes', () => {
-      act(() => {
-        render(
-          <MemoryRouter>
-            <Header />
-          </MemoryRouter>, container
-        );
-      });
+  // xdescribe('When is invoked', () => {
+  //   test('Then input value will changes', () => {
+  //     act(() => {
+  //       render(
+  //         <MemoryRouter>
+  //           <Header />
+  //         </MemoryRouter>, container
+  //       );
+  //     });
 
-      const input = document.getElementById('searcher-header');
-      fireEvent.change(input, { target: { value: 'location' } });
-      expect(input.value).toBe('location');
-    });
-  });
+  //     const input = document.getElementById('searcher-header');
+  //     fireEvent.change(input, { target: { value: 'location' } });
+  //     expect(input.value).toBe('location');
+  //   });
+  // });
 });
 
 // Then will display three anchors

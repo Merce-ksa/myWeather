@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
 import '../../assets/fonts/icofont.css';
 
 export default function Header() {
-  const dataLocation = useLocation();
+  // const dataLocation = useLocation();
 
   const [cityName, setCityName] = useState('');
-  const [metric, setMetric] = useState(true);
-  const [imperial, setImperial] = useState(false);
+  // const [metric, setMetric] = useState(true);
+  // const [imperial, setImperial] = useState(false);
 
-  function toggleMetric() {
-    setMetric(true);
-    setImperial(false);
-  }
+  // function toggleMetric() {
+  //   setMetric(true);
+  //   setImperial(false);
+  // }
 
-  function toggleImperial() {
-    setMetric(false);
-    setImperial(true);
-  }
+  // function toggleImperial() {
+  //   setMetric(false);
+  //   setImperial(true);
+  // }
 
   return (
     <header>
@@ -33,7 +34,10 @@ export default function Header() {
             name="cityName"
             onChange={(event) => setCityName(event.target.value)}
           />
-          <Link to={{
+          <Link to="/">
+            Hola
+          </Link>
+          {/* <Link to={{
             pathname: '/weather',
             state: {
               cityName: `${cityName}`,
@@ -42,9 +46,9 @@ export default function Header() {
           }}
           >
             <span className="icofont-search-1" />
-          </Link>
+          </Link> */}
         </div>
-        <ul key="units" className="measurement-units">
+        {/* <ul key="units" className="measurement-units">
           <li className={metric ? 'units-list--active units-list' : 'units-list'}>
             <Link
               className={metric ? 'units-btn--active units-btn' : 'units-btn '}
@@ -52,7 +56,7 @@ export default function Header() {
               to={{
                 pathname: '/weather',
                 state: {
-                  cityName: !cityName ? `${dataLocation}` : `${cityName}`,
+                  cityName: !cityName ? `${dataLocation.state.cityName}` : `${cityName}`,
                   units: 'metric'
                 }
               }}
@@ -75,7 +79,7 @@ export default function Header() {
               Imperial: ºF, mph
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </header>
   );
