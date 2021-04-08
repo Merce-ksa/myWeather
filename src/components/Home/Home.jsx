@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -7,6 +8,9 @@ export default function Home() {
 
   return (
     <main key="searcher-content" className="searcher-content">
+      <Helmet>
+        <title>myWeather</title>
+      </Helmet>
       <div className="searcher">
         <h1 className="searcher__title">myWeather</h1>
         <div className="searcher__form">
