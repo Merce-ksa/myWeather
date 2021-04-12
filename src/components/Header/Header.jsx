@@ -10,14 +10,9 @@ export default function Header() {
   const [metric, setMetric] = useState(true);
   const [imperial, setImperial] = useState(false);
 
-  function toggleMetric() {
-    setMetric(true);
-    setImperial(false);
-  }
-
-  function toggleImperial() {
-    setMetric(false);
-    setImperial(true);
+  function toggleUnits() {
+    setMetric(!metric);
+    setImperial(!imperial);
   }
 
   return (
@@ -48,7 +43,7 @@ export default function Header() {
           <li className={metric ? 'units-list--active units-list' : 'units-list'}>
             <Link
               className={metric ? 'units-btn--active units-btn' : 'units-btn '}
-              onClick={toggleMetric}
+              onClick={toggleUnits}
               to={{
                 pathname: '/weather',
                 state: {
@@ -63,7 +58,7 @@ export default function Header() {
           <li className={imperial ? 'units-list--active units-list' : 'units-list'}>
             <Link
               className={imperial ? 'units-btn--active units-btn' : 'units-btn '}
-              onClick={toggleImperial}
+              onClick={toggleUnits}
               to={{
                 pathname: '/weather',
                 state: {
