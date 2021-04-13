@@ -5,7 +5,10 @@ import axios from 'axios';
 import Weather from './Weather';
 
 jest.mock('axios');
+jest.mock('../Header/Header', () => 'header');
 jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  __esModule: true,
   useLocation: () => ({
     state: {
       cityName: 'Barcelona',
@@ -42,11 +45,8 @@ describe('Given a Weather function', () => {
           wind: {}
         }
       });
-      render(
-        <Weather />
-      );
 
-      const { container } = await waitFor(() => render(<Weather />));
+      const { container } = await waitFor(() => render(<MemoryRouter><Weather /></MemoryRouter>));
 
       expect(container.querySelector('.temp-resum').innerHTML).toBe('16.1 ºF');
     });
@@ -77,11 +77,8 @@ describe('Given a Weather function', () => {
           wind: {}
         }
       });
-      render(
-        <Weather />
-      );
 
-      const { container } = await waitFor(() => render(<Weather />));
+      const { container } = await waitFor(() => render(<MemoryRouter><Weather /></MemoryRouter>));
 
       expect(container.querySelector('h1').innerHTML).toBe('myWeather');
       expect(container.querySelector('.city-title').innerHTML).toBe('Barcelona');
