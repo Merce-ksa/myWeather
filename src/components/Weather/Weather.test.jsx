@@ -42,11 +42,8 @@ describe('Given a Weather function', () => {
           wind: {}
         }
       });
-      render(
-        <Weather />
-      );
 
-      const { container } = await waitFor(() => render(<Weather />));
+      const { container } = await waitFor(() => render(<MemoryRouter><Weather /></MemoryRouter>));
 
       expect(container.querySelector('.temp-resum').innerHTML).toBe('16.1 ºF');
     });
@@ -77,11 +74,8 @@ describe('Given a Weather function', () => {
           wind: {}
         }
       });
-      render(
-        <Weather />
-      );
 
-      const { container } = await waitFor(() => render(<Weather />));
+      const { container } = await waitFor(() => render(<MemoryRouter><Weather /></MemoryRouter>));
 
       expect(container.querySelector('h1').innerHTML).toBe('myWeather');
       expect(container.querySelector('.city-title').innerHTML).toBe('Barcelona');
