@@ -5,7 +5,10 @@ import axios from 'axios';
 import Weather from './Weather';
 
 jest.mock('axios');
+jest.mock('../Header/Header', () => 'header');
 jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  __esModule: true,
   useLocation: () => ({
     state: {
       cityName: 'Barcelona',
