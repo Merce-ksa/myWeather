@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import icon from '../../assets/images/icon.png';
 
 export default function Home() {
   const [cityName, setCityName] = useState('');
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main key="searcher-content" className="searcher-content">
       <Helmet>
+        <meta content={icon} property="og:image" />
         <title>myWeather</title>
       </Helmet>
       <div className="searcher">
