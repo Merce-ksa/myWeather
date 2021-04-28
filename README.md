@@ -1,7 +1,7 @@
 # myWeather
 
 MyWeather is a weather forecast project! Access quickly to the local forecast.
-You can see the project at [myWeather](https://unruffled-banach-7d4357.netlify.app/)
+You can see the project at [myWeather](https://my-weather-location.netlify.app/)
 
 ![alt text](https://i.imgur.com/MIMx1jM.png?1)
 ![alt text](https://i.imgur.com/L1kGlEP.png?1)
